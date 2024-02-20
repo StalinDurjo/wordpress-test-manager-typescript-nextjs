@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db/sqlitedb.db"
+}
+
+model DockerWordpressProject {
+  id Int @id @default(autoincrement())
+  project_name String @unique
+  wordpress_version String?
+  mysql_version String?
+  mysql_database String?
+  mysql_database_username String?
+  mysql_database_password String?
+  mysql_database_root_password String?
+  base_url String?
+  docker_mysql_port String?
+  docker_phpmyadmin_port String?
+  docker_wordpress_port String?
+  wordpress_project_directory String?
+}
